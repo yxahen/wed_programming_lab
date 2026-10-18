@@ -12,9 +12,7 @@
           GitHub
         </a>
       </p>
-      <p className="mt-1 text-sm text-slate-400">
-        &copy; 2026 Лілія. Зібрано за допомогою React + Vite + Tailwind.
-      </p>
+      <p className="mt-1 text-sm text-slate-400">&copy; 2026 Лілія. Зібрано за допомогою React + Vite.</p>
     </footer>
   );
 }

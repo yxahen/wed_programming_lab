@@ -1,11 +1,10 @@
-/* ===== 1. Змінні та базові налаштування ===== */
+﻿/* ===== 1. Змінні та базові налаштування ===== */
 :root {
     --ink: #1f2a2e;
     --paper: #f3f6f5;
     --surface: #ffffff;
     --accent: #2f6f6a;
     --accent-dark: #1f4e4a;
-    --muted: #5d6b6f;
 }
 
 /* box-sizing: padding і border входять у ширину елемента */
@@ -49,7 +48,7 @@ ul { margin: 0; padding-left: 20px; }
 }
 
 main {
-    flex: 2;                 /* основна колонка вдвічі ширша */
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -60,9 +59,9 @@ aside { flex: 1; align-self: flex-start; }
 /* ===== 4. Клас + блокова модель ===== */
 .card {
     background: var(--surface);
-    margin: 0;                         /* зовнішній відступ */
-    padding: 20px 24px;                /* внутрішній відступ */
-    border: 1px solid #d5dedc;         /* межа */
+    margin: 0;
+    padding: 20px 24px;
+    border: 1px solid #d5dedc;
     border-left: 5px solid var(--accent);
     border-radius: 8px;
 }
@@ -70,16 +69,11 @@ aside { flex: 1; align-self: flex-start; }
 /* ===== 5. Селектори атрибутів ===== */
 a[href^="mailto"] { color: #ffe9a8; }
 a[target="_blank"] { font-weight: 600; }
-a[href^="https"]::after { content: " ↗"; }
 
 /* ===== 6. Псевдокласи ===== */
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; color: var(--accent-dark); }
 a:focus-visible { outline: 3px solid #e0a82e; outline-offset: 2px; }
-
-li:hover { color: var(--accent); }
-li:first-child { font-weight: 600; }
-.card:last-child { margin-bottom: 0; }
 
 /* ===== 7. Футер ===== */
 footer {
@@ -93,7 +87,7 @@ footer a { color: #ffe9a8; }
 /* ===== 8. Медіазапит: вузький екран ===== */
 @media (max-width: 700px) {
     .layout {
-        flex-direction: column;   /* колонки стають одна під одною */
+        flex-direction: column;
         margin: 20px auto;
     }
     aside { align-self: stretch; }

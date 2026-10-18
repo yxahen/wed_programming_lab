@@ -1,5 +1,4 @@
-﻿/* ===== 1. Змінні та базові налаштування ===== */
-:root {
+﻿:root {
     --ink: #1f2a2e;
     --paper: #f3f6f5;
     --surface: #ffffff;
@@ -7,7 +6,6 @@
     --accent-dark: #1f4e4a;
 }
 
-/* box-sizing: padding і border входять у ширину елемента */
 *,
 *::before,
 *::after {
@@ -29,7 +27,6 @@ h3 { font-size: 1.1rem; }
 p  { margin: 0 0 10px; }
 ul { margin: 0; padding-left: 20px; }
 
-/* ===== 2. Селектор ID ===== */
 #main-header {
     background: var(--accent);
     color: #fff;
@@ -38,7 +35,7 @@ ul { margin: 0; padding-left: 20px; }
     border-bottom: 6px solid var(--accent-dark);
 }
 
-/* ===== 3. Макет на Flexbox ===== */
+
 .layout {
     display: flex;
     gap: 24px;
@@ -56,7 +53,6 @@ main {
 
 aside { flex: 1; align-self: flex-start; }
 
-/* ===== 4. Клас + блокова модель ===== */
 .card {
     background: var(--surface);
     margin: 0;
@@ -66,16 +62,13 @@ aside { flex: 1; align-self: flex-start; }
     border-radius: 8px;
 }
 
-/* ===== 5. Селектори атрибутів ===== */
 a[href^="mailto"] { color: #ffe9a8; }
 a[target="_blank"] { font-weight: 600; }
 
-/* ===== 6. Псевдокласи ===== */
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; color: var(--accent-dark); }
 a:focus-visible { outline: 3px solid #e0a82e; outline-offset: 2px; }
 
-/* ===== 7. Футер ===== */
 footer {
     background: var(--ink);
     color: #dbe4e2;
@@ -84,7 +77,6 @@ footer {
 }
 footer a { color: #ffe9a8; }
 
-/* ===== 8. Медіазапит: вузький екран ===== */
 @media (max-width: 700px) {
     .layout {
         flex-direction: column;

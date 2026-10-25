@@ -1,0 +1,158 @@
+:root {
+    --ink: #334155;
+    --paper: #eef2ff;
+    --surface: #ffffff;
+    --accent: #818cf8;
+    --heading: #3730a3;
+    --header-bg: #818cf8;
+    --header-line: #4f46e5;
+    --footer-bg: #312e81;
+    --footer-text: #e0e7ff;
+    --link: #4f46e5;
+    --card-border: #e0e7ff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    transition: background .3s, color .3s;
+}
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 12px; }
+h2 { color: var(--heading); font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.1rem; }
+p  { margin: 0 0 10px; }
+ul { margin: 0; padding-left: 20px; }
+
+#main-header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 32px 24px;
+    text-align: center;
+    border-bottom: 8px solid var(--header-line);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .15);
+}
+#main-header h1 { font-size: 2.25rem; letter-spacing: .02em; }
+#main-header a { color: #ede9fe; font-weight: 600; }
+
+.layout {
+    display: flex;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+aside { flex: 1; align-self: flex-start; }
+
+.card {
+    background: var(--surface);
+    margin: 0;
+    padding: 24px;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s, background .3s;
+}
+.card:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1); }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 3px solid #aa91c7; outline-offset: 2px; }
+a[target="_blank"] { font-weight: 600; }
+
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 24px;
+}
+footer a { color: #ede9fe; }
+
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+    aside { align-self: stretch; }
+    #main-header { padding: 24px 16px; }
+}
+
+/* ===== Лабораторна №4 ===== */
+
+.theme-toggle, .btn {
+    font: inherit;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 600;
+}
+.theme-toggle { margin-top: 16px; background: rgba(255, 255, 255, .92); color: #312e81; }
+.theme-toggle:hover { background: #fff; }
+.btn:hover { background: #4338ca; }
+.btn--ghost { background: transparent; color: var(--ink); border-color: #cbd5e1; }
+.btn--ghost:hover { background: rgba(148, 163, 184, .15); }
+
+.review { padding: 12px 0; border-top: 1px solid var(--card-border); }
+.review:first-child { border-top: 0; padding-top: 0; }
+.review h4 { margin: 0; text-transform: capitalize; font-size: 1.05rem; }
+.review small { color: var(--link); }
+.review p { margin: 6px 0 0; }
+
+.storage { margin-top: 12px; text-align: left; font-size: .8rem; max-width: 1000px; margin-inline: auto; color: #c7d2fe; }
+.storage summary { cursor: pointer; font-size: .9rem; }
+.storage ul { padding-left: 20px; }
+.storage li { word-break: break-word; margin-bottom: 4px; }
+
+.modal {
+    position: fixed; inset: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px; background: rgba(0, 0, 0, .55);
+}
+.modal[hidden] { display: none; }
+.modal__box {
+    width: 100%; max-width: 440px; padding: 24px;
+    background: var(--surface); color: var(--ink); border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .35);
+}
+.modal__box label { display: block; margin-bottom: 12px; }
+.modal__box input, .modal__box textarea {
+    width: 100%; margin-top: 4px; padding: 8px; font: inherit;
+    color: var(--ink); background: var(--surface);
+    border: 1px solid #cbd5e1; border-radius: 6px;
+}
+.modal__actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Нічна тема (клас dark на <body>), палітра як у React-версії */
+body.dark {
+    --ink: #e2e8f0;
+    --paper: #0f172a;
+    --surface: #1e293b;
+    --heading: #a5b4fc;
+    --header-bg: #312e81;
+    --header-line: #818cf8;
+    --footer-bg: #020617;
+    --link: #a5b4fc;
+    --card-border: #475569;
+}
+body.dark .modal__box input,
+body.dark .modal__box textarea { background: #0f172a; border-color: #475569; }

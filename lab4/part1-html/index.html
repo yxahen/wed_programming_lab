@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме — Варіант 7</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>Жируха Лілія</h1>
+        <p>Студентка групи кб-203 (Варіант 7)</p>
+        <p>Email: <a href="mailto:yxahen@gmail.com">yxahen@gmail.com</a> | Телефон: +380 50 000 00 00</p>
+        <button id="themeToggle" type="button" class="theme-toggle">🌙 Нічна тема</button>
+    </header>
+
+    <div class="layout">
+        <main>
+            <section class="card">
+                <h2>Про мене</h2>
+                <p>Студентка Національного університету «Львівська політехніка», навчаюся за напрямом «Кібербезпека». Вивчаю мови Python та C#, а також опановую базові принципи веб-розробки та захисту інформації.</p>
+            </section>
+
+            <section class="card">
+                <h2>Освіта</h2>
+                <article>
+                    <h3>Національний університет «Львівська політехніка»</h3>
+                    <p><strong>Спеціальність:</strong> Кібербезпека</p>
+                    <p><strong>Роки навчання:</strong> 2025 – 2029</p>
+                </article>
+            </section>
+
+            <section class="card">
+                <h2>Досвід та проєкти</h2>
+                <article>
+                    <h3>Навчальні проєкти</h3>
+                    <ul>
+                        <li>Лабораторні роботи з програмування мовами Python та C#</li>
+                        <li>Лабораторна робота з веб-розробки: резюме на HTML та React</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="card">
+                <h2>Відгуки роботодавців</h2>
+                <div id="reviews"><p>Завантаження…</p></div>
+            </section>
+        </main>
+
+        <aside class="card">
+            <h2>Навички</h2>
+            <h3>Технології</h3>
+            <ul>
+                <li>Python</li>
+                <li>C#</li>
+                <li>Основи HTML5 та CSS3</li>
+                <li>Git / GitHub</li>
+            </ul>
+            <h3 style="margin-top: 24px;">Мови</h3>
+            <ul>
+                <li>Українська — рідна</li>
+                <li>Англійська — B1 (Intermediate)</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Мій профіль у <a href="https://github.com/yxahen" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        <p>&copy; 2026 Лілія. Усі права захищені.</p>
+        <details class="storage" open>
+            <summary>Дані з localStorage</summary>
+            <ul id="storageInfo"></ul>
+        </details>
+    </footer>
+
+    <!-- Модальне вікно зворотного зв'язку (через 1 хвилину) -->
+    <div id="modal" class="modal" hidden>
+        <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h2 id="modalTitle">Зворотний зв'язок</h2>
+            <!-- Замініть ВАШ_ID на endpoint вашої форми у Formspree -->
+            <form action="https://formspree.io/f/mbggdggb" method="POST">
+                <label>Ім'я
+                    <input type="text" name="name" required>
+                </label>
+                <label>Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>Номер телефону
+                    <input type="tel" name="phone" required>
+                </label>
+                <label>Повідомлення
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <div class="modal__actions">
+                    <button type="button" id="modalClose" class="btn btn--ghost">Закрити</button>
+                    <button type="submit" class="btn">Надіслати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

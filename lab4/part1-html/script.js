@@ -1,6 +1,5 @@
-const VARIANT = 7; // порядковий номер у журналі групи
+const VARIANT = 7; 
 
-/* ---------- 1. ОС і браузер -> localStorage -> футер ---------- */
 function saveSystemInfo() {
     const info = {
         userAgent: navigator.userAgent,
@@ -36,7 +35,6 @@ function renderStorage() {
     }
 }
 
-/* ---------- 2. Відгуки з JSONPlaceholder ---------- */
 async function loadReviews() {
     const box = document.getElementById('reviews');
     try {
@@ -62,12 +60,11 @@ async function loadReviews() {
     }
 }
 
-/* ---------- 3. Модальне вікно через 1 хвилину ---------- */
 function setupModal() {
     const modal = document.getElementById('modal');
     const close = () => {
         modal.hidden = true;
-        sessionStorage.setItem('modalClosed', '1'); // не показувати повторно в сесії
+        sessionStorage.setItem('modalClosed', '1');
     };
     document.getElementById('modalClose').addEventListener('click', close);
     modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
@@ -76,7 +73,6 @@ function setupModal() {
     setTimeout(() => { modal.hidden = false; }, 60000);
 }
 
-/* ---------- 4. Денна / нічна тема ---------- */
 function themeByTime() {
     const hour = new Date().getHours();
     return hour >= 7 && hour < 21 ? 'light' : 'dark'; // день: 07:00–21:00
@@ -99,7 +95,6 @@ function setupTheme() {
         applyTheme(next);
     });
 
-    // автоперемикання за часом, якщо тему не обирали вручну
     setInterval(() => {
         if (!sessionStorage.getItem('themeManual')) applyTheme(themeByTime());
     }, 60000);
@@ -107,7 +102,7 @@ function setupTheme() {
 
 document.addEventListener('DOMContentLoaded', () => {
     saveSystemInfo();
-    setupTheme();     // викликає renderStorage()
+    setupTheme();     
     loadReviews();
     setupModal();
 });
